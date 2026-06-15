@@ -1,0 +1,269 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+.custom-navbar{
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    padding:15px 0;
+}
+
+.logo{
+    color:white !important;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.logo i{
+    color:#ff1e1e;
+}
+
+.search-box{
+    width:40%;
+}
+
+.search-box input{
+    background:#0d1325;
+    border:1px solid rgba(255,255,255,0.1);
+    color:white;
+    padding:12px 20px 12px 45px;
+    border-radius:12px;
+}
+
+.search-box input:focus{
+    background:#0d1325;
+    color:white;
+    box-shadow:none;
+    border-color:#ff1e1e;
+}
+
+.search-box i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#aaa;
+}
+
+.profile-icon i{
+    font-size:2.5rem;
+    cursor:pointer;
+}
+
+.hero-section{
+    min-height:100vh;
+    background:url('../images/banner.jpg');
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    padding-top:100px;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to right , rgba(0,0,0,0.95) 35% , rgba(0,0,0,0.4));
+}
+
+.hero-content{
+    z-index:2;
+}
+
+.welcome{
+    color:#ff3131;
+    font-size:1.5rem;
+}
+
+.hero-content h1{
+    font-size:5rem;
+    font-weight:900;
+    width:60%;
+    margin:20px 0;
+}
+
+.hero-content p{
+    width:40%;
+    font-size:1.3rem;
+    color:#ddd;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    margin-top:40px;
+}
+
+.form-section{
+    margin-top:-120px;
+    position:relative;
+    z-index:5;
+}
+
+.movie-form{
+    background:rgba(11,17,34,0.95);
+    border:1px solid rgba(255,0,0,0.2);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 0 30px rgba(255,0,0,0.1);
+}
+
+.section-title{
+    color:#ff3131;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.section-title i{
+    margin-right:10px;
+}
+
+.movie-form label{
+    margin-bottom:10px;
+    color:#eee;
+}
+
+.movie-form input,
+.movie-form textarea,
+.movie-form select{
+    background:#121a30 !important;
+    border:1px solid rgba(255,255,255,0.08) !important;
+    color:white !important;
+    padding:15px;
+    border-radius:15px;
+}
+
+.movie-form input:focus,
+.movie-form textarea:focus,
+.movie-form select:focus{
+    box-shadow:none;
+    border-color:#ff3131 !important;
+}
+
+.movies-section{
+    padding:80px 0;
+}
+
+.movie-count{
+    background:#ff3131;
+    padding:10px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.movie-card{
+    background:#0d1325;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.movie-card:hover{
+    transform:translateY(-12px) scale(1.02);
+}
+
+.movie-image{
+    height:350px;
+    overflow:hidden;
+}
+
+.movie-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.rating-badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#ff3131;
+    padding:6px 12px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.movie-info{
+    padding:20px;
+}
+
+.movie-info h3{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.category{
+    color:#bbb;
+    display:block;
+    margin:10px 0;
+}
+
+.movie-info p{
+    color:#ddd;
+    line-height:1.7;
+}
+
+.year{
+    color:#aaa;
+}
+
+.buttons button{
+    padding:10px;
+    border-radius:12px;
+}
+
+.btn{
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+@media(max-width:992px){
+
+    .hero-content h1{
+        width:100%;
+        font-size:3.5rem;
+    }
+
+    .hero-content p{
+        width:80%;
+    }
+
+    .search-box{
+        width:50%;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:2.7rem;
+    }
+
+    .hero-content p{
+        width:100%;
+        font-size:1rem;
+    }
+
+    .search-box{
+        display:none;
+    }
+
+    .movie-form{
+        padding:25px;
+    }
+
+}
