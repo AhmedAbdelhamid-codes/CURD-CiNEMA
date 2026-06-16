@@ -14,8 +14,8 @@
   --text-dark: #9F9F9F;
 
   /* ===== Button States ===== */
-  --primary-hover: #D63B31;  /* أغمق شوية */
-  --hover-Button: rgba(244, 67, 54, 0.601);
+  --primary-hover: #8e140b4f;  /* أغمق شوية */
+  --hover-Button: rgba(228, 55, 42, 0.601);
   
 
   /* ===== Ghost Button ===== */
@@ -55,9 +55,9 @@ body{
     
 }
 
-body::before {
+.hero::before {
   content:'';
-  position:fixed; inset:0; z-index:9999;
+  position:absolute; inset:0; z-index:2;
   pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='0.055'/%3E%3C/svg%3E");
   opacity:1;
@@ -177,7 +177,7 @@ span{
 /* hero */
 
 .hero{
-    height: 100vh;
+    height: calc(100vh + 100px);
     background-image: url(../pictures/bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -191,9 +191,8 @@ span{
 .hero__bg {
       position:absolute; inset:0;
       background:
-        radial-gradient(ellipse 70% 80% at 30% 40%, #0f032c44 0%, transparent 60%),
-        radial-gradient(ellipse 50% 60% at 80% 20%, #f4433622 0%, transparent 55%),
-        linear-gradient(180deg, #0505086f 0%, #0a00056c 50%, #050508 100%);
+        radial-gradient(ellipse 70% 80% at 30% 40%, #0f032c4d 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 20%, #f4433627 0%, transparent 55%);
       animation: bgPulse 8s ease-in-out infinite alternate;
       z-index: 1;
 }
@@ -201,6 +200,12 @@ span{
 @keyframes bgPulse {
       from { opacity:.75; }
       to   { opacity:1; }
+}
+
+.bg-for-sec{
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, #0505086f 0%, #0a00056c 80%, #0F032C 100%);
+  z-index: 3;
 }
 
     /* film strip lines */
@@ -223,7 +228,7 @@ span{
   animation:fadeUp 1s 0.2s ease both;
 }
 
-.hero .tittle span{
+.highlight{
  background: linear-gradient(to right,rgb(244, 67, 54), rgb(102, 51, 225));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -358,11 +363,17 @@ opacity: 0.22;
 user-select: none;
 }
 
+.hero .hero-scroll{
+  animation:fadeUp 1s ease both;
+  animation-delay: var(--d);
+  left: 49.5%; 
+  bottom:130px;
+}
 
 .hero-scroll-dott{
   width: 5px; 
   height: 9px; 
-  right: 9.9px; 
+  right: 9.5px; 
   bottom: 25px ;
   animation: scroll 1.5s ease-in-out infinite;
 }
@@ -379,4 +390,100 @@ user-select: none;
      opacity: 0;
   }
 }
+
+/* platforms */
+
+.platforms{
+  background-color: var(--bg-section);
+  font-family: "Readex Pro", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.platforms_tittle-2{
+  font-family: "Readex Pro", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.platforms .platforms_tittle {
+  font-size: 30px;
+  position: relative;
+}
+
+.platforms .platforms_tittle::after{
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: -20px;
+  width: 23%;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+.platforms .platforms-pragraph{
+  color: var(--text-dark);
+}
+
+.platforms .platforms-btn{
+  background-color: var(--primary);
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  padding: 15px 20px;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0px 0px 5px var(--glow-primary);
+  overflow: hidden;
+}
+
+.platforms .platforms-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 15px var(--glow-primary);
+}
+
+.platforms .platforms-btn::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary-hover);
+  border-radius: 16px;
+  transition: all ease-in-out 0.2s;
+}
+
+.platforms .platforms-btn:hover::after{
+  width: 100%;
+}
+
+.platforms-container .col-sm-3{
+  text-align: center;
+  align-self: center;
+}
+
+.platforms .bottom {
+    bottom: -6vw;
+}
+
+.platforms .bottom,.top{
+  width: auto;
+  height: auto;
+  position: absolute;
+  z-index: -1;
+  right: 0px;
+}
+
+
+/* <!-- films and series --> */
+
+
+
+
+
+
+
+
+
+
+
+
 
