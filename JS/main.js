@@ -7,3 +7,25 @@ window.addEventListener("scroll", function() {
     navbar.classList.remove("scroll");
   }
 });
+
+let shows = document.querySelectorAll(".show")
+
+
+let observer = new IntersectionObserver(function(enters){
+
+  enters.forEach(function(entery){
+    if(entery.isIntersecting){
+      entery.target.classList.add("animate")
+    }
+
+  })
+
+
+
+
+})
+
+shows.forEach(function(show) {
+  
+  observer.observe(show)
+});
