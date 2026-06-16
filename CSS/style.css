@@ -55,13 +55,18 @@ body{
     
 }
 
- body::before {
-      content:'';
-      position:fixed; inset:0; z-index:9999;
-      pointer-events:none;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='0.055'/%3E%3C/svg%3E");
-      opacity:1;
-    }
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:9999;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='0.055'/%3E%3C/svg%3E");
+  opacity:1;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
 
 /* ═══════════════════════════════════════
     HEADER
@@ -215,14 +220,18 @@ span{
   font-weight: bold;
   text-shadow: 0 4px 20px rgba(227, 11, 11, 0.289);
   user-select: none;
- 
+  animation:fadeUp 1s 0.2s ease both;
 }
+
 .hero .tittle span{
  background: linear-gradient(to right,rgb(244, 67, 54), rgb(102, 51, 225));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
+.hero .hero-btns{
+  animation:fadeUp 1s 0.3s ease both;
+}
 .hero .hero-content .hero-btns .main-btn{
   font-size: 18px;
   font-weight: bold;
@@ -257,6 +266,12 @@ span{
   box-shadow: 0px 0px 90px var(--ghost-glow);
 }
 
+
+.hero-content .animation{
+  animation:fadeUp 1s ease both;
+  animation-delay: var(--d);
+}
+
 .hero-content .servese{
   width: 80%;
 }
@@ -288,8 +303,8 @@ span{
 
 
 @media(max-width: 991px){
-
-.hero-content .servese .colom .bin_res{
+.hero-content .servese .colom:nth-child(5) .bin,
+.hero-content .servese .colom:nth-child(6) .bin{
   font-size: 10px;
 }
 }
@@ -344,4 +359,24 @@ user-select: none;
 }
 
 
+.hero-scroll-dott{
+  width: 5px; 
+  height: 9px; 
+  right: 9.9px; 
+  bottom: 25px ;
+  animation: scroll 1.5s ease-in-out infinite;
+}
+
+
+@keyframes scroll{
+  0%{
+     transform: translateY(0px);
+     opacity: 1;
+  }
+
+  100%{
+    transform: translateY(15px);
+     opacity: 0;
+  }
+}
 
