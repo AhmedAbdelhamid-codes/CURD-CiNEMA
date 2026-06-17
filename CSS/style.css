@@ -666,6 +666,7 @@ transition: 0.3s ease;
 @media(max-width: 1199px) {
 
 .devices{
+   opacity: 0;
  transform: translatey(350px);
 
 }
