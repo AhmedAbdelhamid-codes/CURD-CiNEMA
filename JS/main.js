@@ -9,21 +9,35 @@ window.addEventListener("scroll", function() {
 });
 
 let shows = document.querySelectorAll(".show")
+let devices = document.getElementById("devices")
+let devices_content = document.getElementById("devices-content")
+let devices_imge = document.getElementById("devices-imge") 
 
 
 let observer = new IntersectionObserver(function(enters){
+  
 
   enters.forEach(function(entery){
-    if(entery.isIntersecting){
-      entery.target.classList.add("animate")
+
+    let animation = entery.target.dataset.animation
+
+    if(animation === "devices"){
+      if(entery.isIntersecting){
+       devices_content.classList.add("devices-animate-right")
+       devices_imge.classList.add("devices-animate-left")
+      }  
+    }
+    
+    if(animation === "animate"){
+      if(entery.isIntersecting){
+       entery.target.classList.add("animate")
+      } 
     }
 
   })
-
-
-
-
 })
+
+observer.observe(devices);
 
 shows.forEach(function(show) {
   
