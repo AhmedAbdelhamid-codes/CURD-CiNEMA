@@ -607,17 +607,6 @@ opacity: 0.22;
 }
 }
 
-@media(max-width: 1000px){
-.kids .moveis-kids img{
-  width: 435px;
-  height: 350px;
-  object-fit: cover;
-  object-position: 49% 0px;
-  margin: 0px auto;
-  display: block;
-}
-}
-
 @media(max-width: 460px){
 .kids .moveis-kids img{
   width: 335px;
@@ -642,10 +631,7 @@ opacity: 0.22;
 .kids-tittle{
   font-size: 30px;
 }
-
 }
-
-
 
 /* <!-- devices  sec--> */
 
