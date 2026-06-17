@@ -610,13 +610,21 @@ transition: 0.3s ease;
 
 .devices .devices-pregraph{
   color: var(--text-dark);
-  font-size: 16px;
 }
   
 .devices-imge img{
   width: 41.432vw;
-  height: 32.813vw
+  height: 32.813vw;
+  min-width: 319.823px;
+  min-height:190.882px;
 }
+
+/* @media(max-width: 649px){
+.devices-imge img{
+  width: 419.823px;
+  height: 290.882px;
+}
+} */
 
 .devices-animate-right{
   animation: bounce-right 1s ease forwards;
