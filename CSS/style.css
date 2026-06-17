@@ -676,12 +676,23 @@ transition: 0.3s ease;
   height: 490.882px;
 }
 
-/* @media(max-width: 649px){
-.devices-imge img{
-  width: 419.823px;
-  height: 290.882px;
+
+@media(max-width: 1199px) {
+
+.devices{
+ transform: translatey(350px);
+
 }
-} */
+.devices-content{
+transform: translatex(0);
+opacity: 1;
+}
+
+.devices-imge{
+  transform: translatex(0);
+  opacity: 1;
+}
+}
 
 @media(max-width: 637px){
 .devices-imge img{
@@ -704,6 +715,9 @@ transition: 0.3s ease;
 }
 }
 
+.devices.animate{
+  animation: bounceIn 0.8s ease forwards;
+}
 
 .devices-animate-right{
   animation: bounce-right 1s ease forwards;
@@ -736,7 +750,6 @@ transition: 0.3s ease;
     transform:translatex(0);
   }
 }
-
 
 /* <!-- Questions  sec--> */
 

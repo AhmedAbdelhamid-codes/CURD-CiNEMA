@@ -23,8 +23,12 @@ let observer = new IntersectionObserver(function(enters){
 
     if(animation === "devices"){
       if(entery.isIntersecting){
-       devices_content.classList.add("devices-animate-right")
-       devices_imge.classList.add("devices-animate-left")
+        if(window.innerWidth > 1199){
+          devices_content.classList.add("devices-animate-right")
+          devices_imge.classList.add("devices-animate-left")
+        }else{
+           entery.target.classList.add("animate")
+        }
       }  
     }
     
@@ -37,10 +41,10 @@ let observer = new IntersectionObserver(function(enters){
   })
 })
 
+
 observer.observe(devices);
 
 shows.forEach(function(show) {
-  
   observer.observe(show)
 });
 
