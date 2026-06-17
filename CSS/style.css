@@ -651,11 +651,51 @@ transition: 0.3s ease;
 }
 
 
+/* <!-- Questions  sec--> */
 
+.Questions .Questions-pragraph{
+color: var(--text-dark);
 
+}
 
+.Questions .Questions-btn{
+  width: 100%;
+  background-color: var(--bg-section);
+  color: var(--text-dark);
+  border: 0px solid black;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
 
+.Questions .Questions-name{
+transition: ease 0.2s;
+}
 
+.Questions .icon{
+  transition: ease 0.2s;
+}
+ 
+.Questions .answer{
+  max-height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  transition: 0.2s ease;
+}
+
+.Questions .Questions-box.show .Questions-name{
+color: white;
+}
+
+.Questions .Questions-box.show .icon{
+color: white;
+transform: rotate(180deg);
+}
+
+.Questions-box.show .answer{
+  max-height: 200px;
+  padding: 20px;
+  overflow: visible;
+}
 
 
 

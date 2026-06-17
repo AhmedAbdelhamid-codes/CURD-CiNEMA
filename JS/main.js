@@ -43,3 +43,17 @@ shows.forEach(function(show) {
   
   observer.observe(show)
 });
+
+
+let btns = document.querySelectorAll(".Questions-btn");
+
+btns.forEach(function(btn){
+  
+  btn.addEventListener("click",function(){
+      
+    let box = btn.parentElement;
+
+    box.classList.toggle("show")
+   
+  })
+})
