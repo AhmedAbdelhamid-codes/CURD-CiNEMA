@@ -29,12 +29,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+
+<!-- to top -->
+
+<div class="top">
+  <button btn-up_body></button>
+</div>
     
 <!-- =======start navber====== -->
+
 <header>
     <nav id="nav" class="navbar my-nav position-fixed top-0 end-0 start-0 py-3 navbar-expand-lg navbar-dark">
   <div class="container">
-      <a class="navbar-brand logo fs-2" href="#">CIMA<span>NOW</span></a>
+      <a class="navbar-brand logo fs-2" href="#">CIMA<span class="logo-color">NOW</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -370,9 +378,65 @@
 </div>
 </section>
 
+<!-- footer -->
 
-
-
+<footer class="h-auto mt-5 p-4">
+  <div class="container">
+    <div class="footer-top my-5 d-flex justify-content-around align-items-start">
+       <div class="footer-tittle d-flex p-2 justify-content-start align-items-start flex-column gap-3 w-25">
+          <h2 class="footer-logo text-white">CIMA<span class="logo-color">NOW</span></h2>
+          <p class="text-white">وجهتك الاول لعالم الافلام والمسلسلات — كل الي محتاجه في مكان واحد</p>
+          <div class="row gap-3">
+            <div class="social-colom col-2">
+             <a class=" link-underline link-underline-opacity-0 social-media" href=""><i class="fa-brands fa-facebook-f social-media_icon"></i></a>
+            </div>
+            <div class="social-colom col-2">
+             <a class=" link-underline link-underline-opacity-0 social-media" href=""><i class="fa-brands fa-linkedin-in social-media_icon"></i></a>
+            </div>
+            <div class="social-colom col-2">
+             <a class=" link-underline link-underline-opacity-0 social-media" href=""><i class="fa-brands fa-youtube social-media_icon"></i></a>
+            </div>
+            <div class="social-colom col-2">
+             <a class=" link-underline link-underline-opacity-0 social-media" href=""><i class="fa-brands fa-tiktok social-media_icon"></i></a>
+            </div>
+          </div>
+        </div>
+       <div class="footer-links d-flex justify-content-center align-items-end gap-4">
+          <div class="footer-links_right rounded-4 d-flex flex-column justify-content-start align-items-start gap-2">
+            <h4 class="text-white mb-4">استكشف</h4>
+            <a class="link-underline link-underline-opacity-0 link-right" href="">أفلام</a>
+            <a class="link-underline link-underline-opacity-0 link-right" href="">مسلسلات</a>
+            <a class="link-underline link-underline-opacity-0 link-right" href="">الأعلى تقييماً</a>
+            <a class="link-underline link-underline-opacity-0 link-right" href="">إصدارات جديدة</a>
+          </div>
+          <div class="footer-links_left rounded-4 d-flex flex-column justify-content-start align-items-start  gap-2">
+           <h4 class="text-white mb-4">تصنيفات</h4>
+           <a class="link-underline link-underline-opacity-0 link-left" href="">أكشن</a>
+           <a class="link-underline link-underline-opacity-0 link-left" href="">دراما</a>
+           <a class="link-underline link-underline-opacity-0 link-left" href="">رعب</a>
+           <a class="link-underline link-underline-opacity-0 link-left" href="">كوميدي</a>
+         </div>
+        </div>
+      </div>
+    <span></span>
+    <div class="footer-bottom mt-5 p-3 d-flex justify-content-around align-items-center">
+      <div class="footer-copyright">
+        <span class="">.جميع الحقوق محفوظة © <span class="text-white">CIMA<span class="logo-color">NOW</span></span> 2026</span>
+      </div>
+      <div class="footer-bottom_links d-flex justify-content-center align-items-center gap-4 ">
+        <a class="link-underline link-underline-opacity-0  footer-bottom_link" href="">سياسة الخصوصية</a>
+        <a class="link-underline link-underline-opacity-0 footer-bottom_link" href="">شروط الخدمة</a>
+        <a class="link-underline link-underline-opacity-0  footer-bottom_link" href="">اعدادات الكوكيز</a>
+      </div>
+      <div class="up">
+        <button class="btn-up_footer btn rounded-5 d-flex justify-content-center align-items-center gap-3" id="btn-up_footer">
+          <span>العودة للأعلى</span>
+          <i class="fa-solid fa-circle-arrow-up icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script src="./JS/bootstrap.bundle.min.js"></script>
 <script src="./JS/main.js"></script>

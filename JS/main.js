@@ -61,3 +61,15 @@ btns.forEach(function(btn){
    
   })
 })
+
+let btn_up = document.getElementById("btn-up_footer")
+
+btn_up.addEventListener("click",function(){
+
+  window.scrollTo({
+    top: 0,
+    behavior:"smooth"
+  })
+})
+
+
