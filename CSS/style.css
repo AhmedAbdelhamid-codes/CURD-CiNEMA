@@ -49,13 +49,13 @@
 }
 
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body{
-    background-color: var(--bg-body);
-    font-family: "Zain", sans-serif;
-    
+  background-color: var(--bg-body);
+  font-family: "Zain", sans-serif;
+  position: relative;
 }
 
 .hero::before {
@@ -69,6 +69,66 @@ body{
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(30px); }
   to   { opacity:1; transform:translateY(0); }
+}
+
+/* <!-- to top --> */
+.btn-up_body{
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.349);
+  border: 1px solid var(--text-dark);
+  cursor: pointer;
+  box-shadow: 0px 0px 10px white;
+  transform: translateY(70px);
+}
+
+
+.btn-up_body i{
+  font-size: 25px;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-up_body .icon{
+left: 50%;
+bottom: 20%;
+transform: translateX(-50%);
+}
+
+.btn-up_body .icon2{
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+}
+
+.btn-up_body:hover .icon2{
+  bottom: 20%;
+  transform: translate(-50%,0px);
+}
+
+.btn-up_body:hover .icon{
+transform: translate(-50%,-40px);
+}
+
+.btn-up_body.show{
+  animation: up-body 1s ease-in-out both;
+}
+
+@keyframes up-body{
+  0%{
+     transform: translateY(70px);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
 }
 
 /* ═══════════════════════════════════════
@@ -121,7 +181,7 @@ box-shadow: 0px 0px 80px var(--hover-Button);
     transition: var(--trans-time);
 }
 
-@media(max-width: 1199px){
+@media(max-width: 1210px){
 .my-nav .collapse .nav-item .link{
 font-size: 15px;
 }
@@ -795,6 +855,10 @@ footer{
   font-optical-sizing: auto;
 }
 
+.footer-top .footer-tittle {
+  width: 25%;
+}
+
 .footer-tittle .footer-logo{
   font-family: "Righteous", sans-serif;
   font-size: 50px;
@@ -986,5 +1050,18 @@ background-color: var(--primary);
 
 .footer-bottom .btn-up_footer:hover .icon{
  transform: translateY(-5px);
+}
+
+@media(max-width: 992px) {
+
+.footer-top .footer-tittle{
+  width: 100%;
+}
+}
+
+@media(max-width: 286px) {
+.footer-tittle .footer-logo{
+  font-size: 40px;
+}  
 }
 

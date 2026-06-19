@@ -73,3 +73,18 @@ btn_up.addEventListener("click",function(){
 })
 
 
+let btn_up_body = document.getElementById("btn-up_body")
+
+window.addEventListener("scroll",function(){
+  
+  window.scrollY > 200 && window.scrollY < 3500? btn_up_body.classList.add("show") : btn_up_body.classList.remove("show") 
+  
+})
+
+  btn_up_body.addEventListener("click",function(){
+       
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+  })
