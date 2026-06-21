@@ -41,8 +41,9 @@ let observer = new IntersectionObserver(function(enters){
   })
 })
 
-
+if(devices){
 observer.observe(devices);
+}
 
 shows.forEach(function(show) {
   observer.observe(show)
@@ -64,6 +65,8 @@ btns.forEach(function(btn){
 
 let btn_up = document.getElementById("btn-up_footer")
 
+
+if(btn_up){
 btn_up.addEventListener("click",function(){
 
   window.scrollTo({
@@ -71,6 +74,7 @@ btn_up.addEventListener("click",function(){
     behavior:"smooth"
   })
 })
+}
 
 
 let btn_up_body = document.getElementById("btn-up_body")
@@ -81,10 +85,77 @@ window.addEventListener("scroll",function(){
   
 })
 
-  btn_up_body.addEventListener("click",function(){
+if(btn_up_body){
+btn_up_body.addEventListener("click",function(){
        
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       })
+})
+}
+
+
+
+let btn_ghosts = document.querySelectorAll(".ghost-btn")
+
+btn_ghosts.forEach(function(btn){
+
+  btn.addEventListener("click",function(){
+    
+   let icon = btn.querySelector(".icon")
+   console.log("clicked");
+    btn.classList.toggle("bg-white")
+    icon.classList.toggle("text-dark")
+    icon.classList.toggle("fa-x")
+    icon.classList.toggle("fa-plus")
+
   })
+
+})
+
+
+let cards = document.getElementById("cards")
+let next = document.getElementById("next")
+let pre = document.getElementById("pre")
+
+
+next.addEventListener("click", function(){
+ 
+   cards.scrollBy({
+    left: -260,
+    behavior: "smooth"
+   }) 
+
+
+   if(Math.abs(cards.scrollLeft) + cards.clientWidth  >= cards.scrollWidth ){
+      next.classList.add("disabled")
+   }else{
+     next.classList.remove("disabled")
+   }
+
+   if(cards.scrollLeft <= 0){
+      pre.classList.remove("disabled")
+   }
+
+})
+
+pre.addEventListener("click", function(){
+ 
+   cards.scrollBy({
+    left: 260,
+    behavior: "smooth"
+   })
+
+
+  if(cards.scrollLeft >= -260){
+      pre.classList.add("disabled")
+   }else{
+     pre.classList.remove("disabled")
+   }
+
+   if(cards.scrollLeft <= 0){
+      next.classList.remove("disabled")
+   }
+
+})
