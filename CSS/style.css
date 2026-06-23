@@ -244,7 +244,7 @@ left: 50%;
 
 .hero{
     height: calc(100vh + 100px);
-    background-image: url(../pictures/bg.jpg);
+    background-image: url(../pictures/background-hero.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
