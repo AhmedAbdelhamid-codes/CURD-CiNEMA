@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html ang="ar" dir="rtl" >
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--======title-for-website====== -->
+     <title>CimaNow-CRUD</title>
+
+    <!--=======link css======-->
+     <link rel="stylesheet" href="./CSS/bootstrap.rtl.css" />
+     <link rel="stylesheet" href="./CSS/style.css" />
+
+    <!-- font awesome (icons) -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!--========goagle fonts=======-->
+       <!-- font-brend -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+       <!-- font-body -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+      <!--  -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+
+    <!-- to top -->
+
+<button class="btn-up_body z-2 position-fixed overflow-hidden" id="btn-up_body">
+  <i class="fa-solid fa-arrow-up position-absolute icon "></i>
+  <i class="fa-solid fa-arrow-up position-absolute icon2"></i>
+</button>
+
+<!--  header -->
+
+  <header class=" position-relative" style="height: 100px;">
+     <nav id="nav" class="navbar my-nav position-absolute top-0 end-0 start-0 py-3 navbar-expand-lg navbar-dark">
+  <div class="container">
+      <a class="navbar-brand logo fs-2" href="#">CIMA<span class="logo-color">NOW</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item d-flex">
+          <a class="nav-link link text-white mx-lg-3  px-0" aria-current="page" href="#">الرئيسية</a>
+          <img class="icon" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3e0/512.webp" alt="">
+        </li>
+           <li class="nav-item d-flex">
+          <a class="nav-link link text-white  mx-lg-3  px-0" href="#">الافلام</a>
+          <img  class="icon" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3ac/512.webp" alt="">
+        </li>
+           <li class="nav-item d-flex">
+            <a class="nav-link link text-white mx-lg-3  px-0" href="#">المسلسلات</a>
+          <img class="icon"  src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f37f/512.webp" alt="">
+        </li>
+        <li class="nav-item d-flex">
+        <a class="nav-link link text-white mx-lg-3  px-0" href="#">رمضان</a>
+        <img class="icon" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31c/512.webp">          
+        </li>       
+        <li class="nav-item d-flex">
+        <a class="nav-link link text-white mx-lg-3  px-0" href="#">إدارة المحتوى</a>
+        <img class="icon" src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699/512.webp">          
+        </li>       
+      </ul>
+    </div>
+     <div class="header-btns d-none d-sm-block d-flex justify-content-center ">
+        <a class="btn rounded-5 py-2 px-3 text-center fw-bold main-btn text-white " href="">اشترك دلوقتي</a>
+    </div>
+  </div>
+</nav>
+  </header>
+
+
+
+<section class="py-5">
+
+    <div class="container">
+
+        <!-- Title -->
+      <div class="title text-center mb-5">
+          <h1 class="text-white"><span class="highlight">Movie and TV series</span> management system</h1>
+          <p>
+            بسهولة Add and manage your favorite movies and TV series
+          </p>
+      </div>
+
+        <!-- Form -->
+      <div class="movie-form mx-auto mb-5">
+            <div class="mb-4">
+             <label>عنوان العمل </label>
+             <input type="text" id="tittle" class="form-control" placeholder="ادخل اسم الفيلم او المسلسل...">
+            </div>
+         
+            <div class="details d-flex justify-content-center align-items-center flex-lg-nowrap flex-wrap gap-2">
+            <div class="mb-4 w-100">
+             <label>التصنيف</label>
+             <input type="text" id="category" class="form-control" placeholder="رعب , خيال , دراما...">
+            </div>
+            <div class="mb-4 w-100">
+             <label>السنة</label>
+             <input type="number" id="year" class="form-control" placeholder="2026...">
+            </div>
+            </div>
+          
+            <div class="mb-4">
+                <label>نوع العمل</label>
+                <select class="form-select" id="type">
+                    <option selected disabled>اختار نوع العمل</option>
+                    <option value="افلام عربي">افلام عربي</option>
+                    <option value="افلام اجنبي">افلام اجنبي</option>
+                    <option value="مسلسلات عربي">مسلسلات عربي</option>
+                    <option value="مسلسلات اجنبي">مسلسلات اجنبي</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label>وصف العمل</label>
+                <textarea rows="5" id="Description" class="form-control" placeholder="اكتب وصفا للعمل..."></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label>صورة العمل</label>
+                <input type="file" id="fileinput" class="form-control">
+            </div>
+
+            <button type="button" class="w-100 add-btn mb-4" id="add-card">
+                <i class="bi bi-plus-circle-fill"></i>
+                اضافة العمل
+            </button>
+            <button type="button" class="d-none w-100 add-update mb-4" id="add-update">
+                <i class="bi bi-plus-circle-fill"></i>
+                تعديل العمل
+            </button>
+            
+            <div class="search mt-3">
+              <label>ابحث  عن الاعمال</label>
+              <input  type="search" class="form-control w-100 mx-auto" id="search" placeholder="اسم الفلم او المسلسل..." >
+            </div>
+        </div>
+
+        <!-- Movies -->
+        <div class="row g-4" id="show">
+           
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<script src="./JS/bootstrap.bundle.min.js"></script>
+<script src="./JS/CRUD.js"></script>     
+</body>
+</html>

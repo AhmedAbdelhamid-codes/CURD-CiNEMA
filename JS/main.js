@@ -115,47 +115,150 @@ btn_ghosts.forEach(function(btn){
 })
 
 
-let cards = document.getElementById("cards")
-let next = document.getElementById("next")
-let pre = document.getElementById("pre")
+// add cards //
+let arr = []
 
 
-next.addEventListener("click", function(){
+if(localStorage.getItem("movies")){
+
+arr = JSON.parse(localStorage.getItem("movies"))
+
+}
+
+
+let arabicMovies = [];
+
+for(let i = 0; i < arr.length; i++){
+
+    if(arr[i].type === "افلام عربي"){
+        arabicMovies.push(arr[i]);
+    }
+
+}
+
+
+let foreignFilms = []
+
+for(let i = 0; i < arr.length; i++){
+
+    if(arr[i].type === "افلام اجنبي"){
+        foreignFilms.push(arr[i]);
+    }
+
+}
+
+
+let arabicSeries = [];
+
+for(let i = 0; i < arr.length; i++){
+
+    if(arr[i].type === "مسلسلات عربي"){
+        arabicSeries.push(arr[i]);
+    }
+
+}
+
+let foreignSeries = [];
+
+for(let i = 0; i < arr.length; i++){
+
+  if(arr[i].type === "مسلسلات اجنبي"){
+        foreignSeries.push(arr[i]);
+  }
+
+}
+
+
+
+display(arabicMovies, "arabicFilmsCards");
+
+display(foreignFilms, "foreignFilmsCards");
+
+display(arabicSeries, "arabicSeriesCards");
+
+display(foreignSeries, "foreignSeriesCards");
+
+
+function display(array, position){
+  let cartona = "";
+
+  for(let i = 0; i < array.length; i++){
+    
+    cartona += `
+       <!-- Card -->
+        <div class="TV-card position-relative rounded-4">
+           <div class="TV-imge w-100 h-100 overflow-hidden rounded-4">
+              <img src="${array[i].imge}" class="rounded-3" alt="poster">
+            </div>
+            <ul class="TV-content list-unstyled">
+              <li class="shret">1080p</li>
+              <li class="year-home">${array[i].year}</li>
+            </ul>
+            <ul class="TV-info position-absolute top-0 end-0 d-flex justify-content-between align-items-center flex-column w-100 h-100 rounded-4 list-unstyled">
+              <li class="film bg-body">${array[i].type}</li>
+              <li class="icon text-white d-flex justify-content-center align-items-center pe-1"><i class="fa-solid fa-play"></i></li>
+              <li class="title fw-bold text-center text-white"> ${array[i].tittle} 
+                <span class="d-block">${array[i].category}</span>
+              </li>
+            </ul>
+        </div>
+    `
+}
+
+cartona += `
+        <div class="TV-btns">
+         <button class="next"><i class="fa-solid fa-chevron-left"></i></button>
+         <button class="pre disabled"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+`
+
+document.getElementById(position).innerHTML = cartona
+}
+
+let cards = document.querySelectorAll(".TV-cards")
+
+if(cards){
+
+  cards.forEach(function(card){
+   
+    let next = card.querySelector(".next");
+    let pre = card.querySelector(".pre");
+
+    next.addEventListener("click", function(){
  
-   cards.scrollBy({
-    left: -260,
-    behavior: "smooth"
-   }) 
+    card.scrollBy({
+     left: -260,
+     behavior: "smooth"
+    }) 
 
-
-   if(Math.abs(cards.scrollLeft) + cards.clientWidth  >= cards.scrollWidth ){
+   if(Math.abs(card.scrollLeft) + card.clientWidth  >= card.scrollWidth ){
       next.classList.add("disabled")
    }else{
      next.classList.remove("disabled")
    }
 
-   if(cards.scrollLeft <= 0){
+   if(card.scrollLeft <= 0){
       pre.classList.remove("disabled")
    }
-
-})
-
-pre.addEventListener("click", function(){
- 
-   cards.scrollBy({
-    left: 260,
-    behavior: "smooth"
    })
 
+   pre.addEventListener("click", function(){
+ 
+     card.scrollBy({
+      left: 260,
+      behavior: "smooth"
+     })
 
-  if(cards.scrollLeft >= -260){
+
+   if(card.scrollLeft >= -260){
       pre.classList.add("disabled")
-   }else{
-     pre.classList.remove("disabled")
-   }
+    }else{
+      pre.classList.remove("disabled")
+    }
 
-   if(cards.scrollLeft <= 0){
+   if(card.scrollLeft <= 0){
       next.classList.remove("disabled")
    }
-
-})
+   })
+  })
+}

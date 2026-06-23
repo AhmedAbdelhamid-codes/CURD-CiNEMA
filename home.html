@@ -30,7 +30,11 @@
    
 </head>
 <body>
-
+ 
+  <button class="btn-up_body z-2 position-fixed overflow-hidden" id="btn-up_body">
+   <i class="fa-solid fa-arrow-up position-absolute icon "></i>
+   <i class="fa-solid fa-arrow-up position-absolute icon2"></i>
+  </button>
 
 
   <header>
@@ -55,15 +59,11 @@
           <img class="icon"  src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f37f/512.webp" alt="">
         </li>
         <li class="nav-item d-flex">
-          <a class="nav-link link text-white  mx-lg-3  px-0" href="#">البرامج التلفزيونية</a>
-          <img class="icon" style="top: 4px;" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4fa/512.webp" alt="">
-        </li>
-        <li class="nav-item d-flex">
         <a class="nav-link link text-white mx-lg-3  px-0" href="#">رمضان</a>
         <img class="icon" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31c/512.webp">          
         </li>       
         <li class="nav-item d-flex">
-        <a class="nav-link link text-white mx-lg-3  px-0" href="#">إدارة المحتوى</a>
+        <a class="nav-link link text-white mx-lg-3  px-0" href="./CURD.html">إدارة المحتوى</a>
         <img class="icon" src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699/512.webp">          
         </li>       
       </ul>
@@ -75,7 +75,7 @@
 </nav>
   </header>
 
-<div class="home-hero position-relative vh-100">
+<div class="home-hero position-relative vh-100 mb-5">
 <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-indicators mb-5 p-3">
      <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
@@ -438,49 +438,39 @@
 </div>
 
 
-<!-- films sec -->
+<!-- films and series  sec -->
+ 
+<main class="films-and_series">
 
-<section class="arabic-films position-relative vh-100 d-flex ">
-    <div class="arabic-films_cards d-flex align-items-center ps-4 gap-3 overflow-x-auto" id="cards">
-        <div class="arabic-films_card position-relative rounded-4">
-           <div class="arabic-films_imge w-100 h-100 overflow-hidden rounded-4">
-              <img src="./pictures/New folder (2)/الدور السابع.webp" class="rounded-3" alt="poster">
-            </div>
-            <ul class="arabic-films_content list-unstyled">
-              <li class="shret">1080p</li>
-              <li class="year">2025</li>
-            </ul>
-            <ul class="arabic-films_info position-absolute top-0 end-0 d-flex justify-content-between align-items-center flex-column w-100 h-100 rounded-4 list-unstyled">
-              <li class="film bg-body">افلام عربي</li>
-              <li class="icon text-white d-flex justify-content-center align-items-center pe-1"><i class="fa-solid fa-play"></i></li>
-              <li class="title fw-bold text-center text-white"> 6 ايام
-                <span class="d-block">رعب,اثارة</span>
-              </li>
-            </ul>
+  <div class="header text-center ">
+    <h1 class="text-white fs-1">نظّم افلامك ومسلسلاتك بطريقة لم يسبق لها مثيل</h1>
+    <p class="fs-3 pragraph-home">ابنِ عالمك <span class="highlight">السينمائي...</span></p>
+  </div>
+
+<section class="arabic-films TV position-relative mt-1 d-flex ">
+        <div class="arabic-films_cards TV-cards d-flex align-items-center ps-4 gap-3 overflow-x-auto" id="arabicFilmsCards">
+    
         </div>
-       
-        <div class="arabic-films_btns">
-        <button class="next" id="next"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="pre disabled" id="pre"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
+</section>
+
+<section class="foreign-films TV position-relative mt-5 d-flex ">
+    <div class="foreign-films_cards  TV-cards d-flex align-items-center ps-4 gap-3 overflow-x-auto" id="foreignFilmsCards">
+     
     </div>
 </section>
 
+<section class="arabic-series TV position-relative mt-5 d-flex ">
+    <div class="arabic-series_cards  TV-cards d-flex align-items-center ps-4 gap-3 overflow-x-auto" id="arabicSeriesCards">
+    
+    </div>
+</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<section class="foreign-series TV position-relative mt-5 d-flex ">
+    <div class="foreign-series_cards TV-cards d-flex align-items-center ps-4 gap-3 overflow-x-auto" id="foreignSeriesCards">
+   
+    </div>
+</section>
+</main>
 
 <script src="./JS/bootstrap.bundle.min.js"></script>
 <script src="./JS/main.js"></script>   
