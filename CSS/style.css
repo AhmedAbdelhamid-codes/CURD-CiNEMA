@@ -1327,8 +1327,7 @@ background-image: linear-gradient(rgba(19, 4, 56, 0.658), rgba(0, 90, 234, 0) 20
 }
 
 .TV-cards{
-width: max-content;
-height: 460px;
+height: 400px;
 justify-content: flex-start;
 transition: ease 0.3s;
 scroll-behavior: smooth;
@@ -1445,6 +1444,7 @@ transition: 0.3s 0.1s;
 }
 
 .TV-btns .next,.pre{
+  height: 385px;
   position: absolute;
   top: 40px;
   bottom:40px;
@@ -1457,7 +1457,7 @@ transition: 0.3s 0.1s;
 
 .TV-btns .next{
   left: 0px;
-  padding: 0vw 7vw 0 3vw;
+  padding: 0vw 12vw 0 3vw;
   background: linear-gradient(90deg, rgb(19, 4, 56) 0, transparent );
 
 }

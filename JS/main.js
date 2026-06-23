@@ -1,3 +1,4 @@
+// =============navbar============ //
 window.addEventListener("scroll", function() {
   let navbar = document.getElementById("nav");
 
@@ -7,6 +8,9 @@ window.addEventListener("scroll", function() {
     navbar.classList.remove("scroll");
   }
 });
+
+
+// ===========animation for sections============ //
 
 let shows = document.querySelectorAll(".show")
 let devices = document.getElementById("devices")
@@ -50,6 +54,7 @@ shows.forEach(function(show) {
 });
 
 
+// ============ animation for FAQ Section ============= //
 let btns = document.querySelectorAll(".Questions-btn");
 
 btns.forEach(function(btn){
@@ -63,6 +68,8 @@ btns.forEach(function(btn){
   })
 })
 
+
+// ============up to top for footer=========== //
 let btn_up = document.getElementById("btn-up_footer")
 
 
@@ -76,7 +83,7 @@ btn_up.addEventListener("click",function(){
 })
 }
 
-
+// ============up to top for body=========== //
 let btn_up_body = document.getElementById("btn-up_body")
 
 window.addEventListener("scroll",function(){
@@ -96,7 +103,7 @@ btn_up_body.addEventListener("click",function(){
 }
 
 
-
+// =========== Favorite Movie Toggle============//
 let btn_ghosts = document.querySelectorAll(".ghost-btn")
 
 btn_ghosts.forEach(function(btn){
@@ -104,7 +111,7 @@ btn_ghosts.forEach(function(btn){
   btn.addEventListener("click",function(){
     
    let icon = btn.querySelector(".icon")
-   console.log("clicked");
+
     btn.classList.toggle("bg-white")
     icon.classList.toggle("text-dark")
     icon.classList.toggle("fa-x")
@@ -115,9 +122,8 @@ btn_ghosts.forEach(function(btn){
 })
 
 
-// add cards //
+// =======add cards from CRUD page====== \\
 let arr = []
-
 
 if(localStorage.getItem("movies")){
 
@@ -126,6 +132,7 @@ arr = JSON.parse(localStorage.getItem("movies"))
 }
 
 
+// ======array for arabic movies====== \\
 let arabicMovies = [];
 
 for(let i = 0; i < arr.length; i++){
@@ -136,28 +143,27 @@ for(let i = 0; i < arr.length; i++){
 
 }
 
-
+// ======array for foreign films====== \\
 let foreignFilms = []
 
 for(let i = 0; i < arr.length; i++){
 
-    if(arr[i].type === "افلام اجنبي"){
+  if(arr[i].type === "افلام اجنبي"){
         foreignFilms.push(arr[i]);
-    }
-
+  }
 }
 
-
+// ======array for arabic series====== \\
 let arabicSeries = [];
 
 for(let i = 0; i < arr.length; i++){
 
-    if(arr[i].type === "مسلسلات عربي"){
+  if(arr[i].type === "مسلسلات عربي"){
         arabicSeries.push(arr[i]);
-    }
-
+  }
 }
 
+// ======array for foreign series====== \\
 let foreignSeries = [];
 
 for(let i = 0; i < arr.length; i++){
@@ -165,11 +171,9 @@ for(let i = 0; i < arr.length; i++){
   if(arr[i].type === "مسلسلات اجنبي"){
         foreignSeries.push(arr[i]);
   }
-
 }
 
-
-
+// =======display cards in their section======= \\
 display(arabicMovies, "arabicFilmsCards");
 
 display(foreignFilms, "foreignFilmsCards");
@@ -211,14 +215,14 @@ cartona += `
          <button class="pre disabled"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 `
-
 document.getElementById(position).innerHTML = cartona
 }
 
+
+// =====buttons next and pre for slider cards===== \\
 let cards = document.querySelectorAll(".TV-cards")
 
 if(cards){
-
   cards.forEach(function(card){
    
     let next = card.querySelector(".next");

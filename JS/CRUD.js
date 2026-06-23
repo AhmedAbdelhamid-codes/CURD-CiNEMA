@@ -1,3 +1,4 @@
+// ============up to top for body=========== //
 let btn_up_body = document.getElementById("btn-up_body")
 
 window.addEventListener("scroll",function(){
@@ -17,7 +18,7 @@ btn_up_body.addEventListener("click",function(){
 }
 
 
-// =============CRUD============== //
+// ============= start CRUD============== //
 
 let tittle = document.getElementById("tittle");
 let category = document.getElementById("category");
@@ -29,12 +30,11 @@ let add_card = document.getElementById("add-card");
 let movies = [];
 let index;
 
+
 if(localStorage.getItem("movies")){
     movies = JSON.parse(localStorage.getItem("movies"))
     display(movies)
 }
-
-
 
 // =============creat============== //
 
@@ -66,17 +66,19 @@ add_card.addEventListener("click",function(){
 })
 
 
+// =========reset form====== \\
+
 function reset(){
     tittle.value = ""
     category.value = ""
     year.value = ""
     type.value = ""
     Description.value = ""
-    fileinput = ""
+    fileinput.value = "";
 }
 
 
-// =============read============== //
+// =============Read============== //
 
 function display(arrtarget){
 
@@ -186,7 +188,7 @@ update_btn.addEventListener("click",function(){
     movies[index].category = category.value
     movies[index].year = year.value
     movies[index].type = type.value
-    Description.value  = Description.value
+    movies[index].Description = Description.value
  
    localStorage.setItem("movies",JSON.stringify(movies))
 
@@ -223,9 +225,7 @@ for(let i = 0; i < movies.length; i++){
         movies[i].oldindex = i;
     }
 }
-
  display(listsearch)
-
 }
 
 
