@@ -9,14 +9,14 @@
   --bg-sec-footer: #120732;
 
   /* ===== Primary Accent ===== */
-  --primary: #F44336;        /* الأحمر الأساسي (logo / buttons / navbar) */
+  --primary: #F44336;        
 
   /* ===== Text Colors ===== */
   --text-white: #FFFFFF;
   --text-dark: #9F9F9F;
 
   /* ===== Button States ===== */
-  --primary-hover: #8e140b4f;  /* أغمق شوية */
+  --primary-hover: #8e140b4f;  
   --hover-Button: rgba(228, 55, 42, 0.601);
   --hover-button_footer: #240A09;
   
