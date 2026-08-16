@@ -302,6 +302,7 @@ left: 50%;
 .hero .hero-btns{
   animation:fadeUp 1s 0.3s ease both;
 }
+
 .hero .hero-content .hero-btns .main-btn{
   font-size: 18px;
   font-weight: bold;
